@@ -1,6 +1,9 @@
-<div> 
-  <h1>State</h1>
-  <select>
-      <option *ngFor="let state of states" [value]="state">{{state}}</option>
- </select>
-</div>  
+<section class="jumbotron text-center">
+    <div class="container">
+        <label>State</label>
+        <select (change)="onChange($event)">
+            <option *ngFor="let state of states" [value]="state">{{state}}</option>
+       </select>
+       <app-city *ngIf = 'selectedState' [selectedState] = 'selectedState'></app-city>
+    </div>
+  </section>
